@@ -1,0 +1,18 @@
+ADMINISTRADOR FUNCIONALIDADES:
+
+- Cadastrar tipo de usuário (Paciente, médico, Administrador)
+
+-Agendar consulta (Contendo as segyintes informações: Data agendamento, Nome do médico, especialidade do médico, ID da consulta) 
+
+-Cancelar consulta (Passando o ID da consulta a ser cancelada)
+
+
+MÉDICO FUNCIONALIDADES:
+
+- Visualizar os agendamentos associados a ele
+
+
+PACIENTE FUNCIONALIDADES:
+
+- Visualizar suas consultas marcadas
+
