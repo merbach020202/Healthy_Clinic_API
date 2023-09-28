@@ -13,7 +13,7 @@ namespace Healthy_Clinic_Manha_Edu.Domains
 
         [Column(TypeName ="VARCHAR(50)")]
         [Required(ErrorMessage ="O nome do médico é obrigatório")]
-        public string? Name { get; set; }
+        public string? Nome { get; set; }
 
         [Column(TypeName = "VARCHAR(50)")]
         [Required(ErrorMessage = "O Email é obrigatório")]
@@ -26,14 +26,15 @@ namespace Healthy_Clinic_Manha_Edu.Domains
 
         [Column(TypeName = "VARCHAR(6)")]
         [Required(ErrorMessage = "O CRM é obrigatório")]
+        [StringLength(6, MinimumLength = 6, ErrorMessage = "O CRM deve conter 6 caracteres")]
         public string CRM { get; set; }
 
 
         //Referências
-        public Guid IdTiposUsuario { get; set; }
+        public Guid IdUsuario { get; set; }
 
-        [ForeignKey(nameof(IdTiposUsuario))]
-        public TiposUsuario? TiposUsuario { get; set; }
+        [ForeignKey(nameof(IdUsuario))]
+        public Usuario? Usuario { get; set; }
 
 
         public Guid IdClinica { get; set; }
@@ -45,6 +46,6 @@ namespace Healthy_Clinic_Manha_Edu.Domains
         public Guid IdEspecialidades { get; set; }
 
         [ForeignKey(nameof(IdEspecialidades))]
-        public Especialidades? Especialidades { get; set; }
+        public Especialidade? Especialidades { get; set; }
     }
 }

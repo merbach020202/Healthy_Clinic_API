@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\buildMultiTargeting\Healthy_Clinic_Manha_Edu.props" />
+</Project>

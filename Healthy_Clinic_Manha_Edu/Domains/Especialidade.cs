@@ -3,8 +3,8 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Healthy_Clinic_Manha_Edu.Domains
 {
-    [Table(nameof(Especialidades))]
-    public class Especialidades
+    [Table(nameof(Especialidade))]
+    public class Especialidade
     {
         [Key]
         public Guid IdEspecialdiades { get; set; } = Guid.NewGuid();

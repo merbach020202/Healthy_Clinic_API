@@ -14,9 +14,17 @@ namespace Healthy_Clinic_Manha_Edu.Domains
         [Required(ErrorMessage = "Endereço é obrigatório")]
         public string? Endereco { get; set; }
 
-        [Column(TypeName = "DATETIME")]
-        [Required(ErrorMessage = "Horário de funcionamento é obrigatório")]
-        public string? HorarioFunconamento { get; set; }
+        [Column(TypeName = "TIME")]
+        [Required(ErrorMessage = "horário de abertura obrigatório!")]
+        [DataType(DataType.Time)]
+        [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = @"hh\:mm")]
+        public TimeSpan? HorarioAbertura { get; set; }
+
+        [Column(TypeName = "TIME")]
+        [Required(ErrorMessage = "horário de abertura obrigatório!")]
+        [DataType(DataType.Time)]
+        [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = @"hh\:mm")]
+        public TimeSpan? HorarioFechamento { get; set; }
 
         [Column(TypeName = "VARCHAR(100)")]
         [Required(ErrorMessage = "CNPJ é obrigatória")]

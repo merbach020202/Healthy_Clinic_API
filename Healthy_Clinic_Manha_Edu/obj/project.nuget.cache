@@ -1,12 +1,14 @@
 {
   "version": 2,
-  "dgSpecHash": "KNCUee8apPq9gFi2fvqK6p1A7PxPZSNKXUtzb3FskrGcuLPrH36Ev43L7cCPXFEvrqBI2SvZZWCpwE97iEMw3Q==",
+  "dgSpecHash": "tjW4Sm+j/TmHYAxt9jApvkzfB543CvoZcPTbJo/zItJ8A00f4mIDErUrHg+lkD5HIxaRerdbjslnoni0kqlv2A==",
   "success": true,
   "projectFilePath": "C:\\Users\\44850641822\\Desktop\\VisualStudio\\Healthy_Clinic (VISUAL STUDIO)\\Healthy_Clinic_Manha_Edu\\Healthy_Clinic_Manha_Edu.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\44850641822\\.nuget\\packages\\azure.core\\1.25.0\\azure.core.1.25.0.nupkg.sha512",
     "C:\\Users\\44850641822\\.nuget\\packages\\azure.identity\\1.7.0\\azure.identity.1.7.0.nupkg.sha512",
     "C:\\Users\\44850641822\\.nuget\\packages\\bcrypt.net-next\\4.0.3\\bcrypt.net-next.4.0.3.nupkg.sha512",
+    "C:\\Users\\44850641822\\.nuget\\packages\\dateonlytimeonly.aspnet\\2.1.1\\dateonlytimeonly.aspnet.2.1.1.nupkg.sha512",
+    "C:\\Users\\44850641822\\.nuget\\packages\\erikej.entityframeworkcore.sqlserver.dateonlytimeonly\\7.0.5\\erikej.entityframeworkcore.sqlserver.dateonlytimeonly.7.0.5.nupkg.sha512",
     "C:\\Users\\44850641822\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",
     "C:\\Users\\44850641822\\.nuget\\packages\\microsoft.aspnetcore.authentication.jwtbearer\\7.0.11\\microsoft.aspnetcore.authentication.jwtbearer.7.0.11.nupkg.sha512",
     "C:\\Users\\44850641822\\.nuget\\packages\\microsoft.aspnetcore.jsonpatch\\7.0.11\\microsoft.aspnetcore.jsonpatch.7.0.11.nupkg.sha512",

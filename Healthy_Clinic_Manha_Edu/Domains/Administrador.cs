@@ -7,18 +7,20 @@ namespace Healthy_Clinic_Manha_Edu.Domains
     public class Administrador
     {
         [Key]
-        public Guid IdAdministrador = Guid.NewGuid();
+        public Guid IdAdministrador { get; set; } = Guid.NewGuid();
 
+        [Column(TypeName ="VARCHAR(50)")]
         public string? Email { get; set; }
 
+        [Column(TypeName = "VARCHAR(50)")]
         public string? Senha { get; set; }
 
 
         //Referências
         [Required(ErrorMessage ="Informe o tipo de usuário")]
-        public Guid IdTiposUsuario { get; set; }
+        public Guid IdUsuario { get; set; }
 
-        [ForeignKey(nameof(IdTiposUsuario))]
-        public TiposUsuario? TiposUsuario { get; set; }
+        [ForeignKey(nameof(IdUsuario))]
+        public Usuario? Usuario { get; set; }
     }
 }
