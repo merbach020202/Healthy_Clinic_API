@@ -34,7 +34,7 @@ builder.Services.AddAuthentication(options =>
 });
 
 
-
+builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen(options =>
 {
     options.SwaggerDoc("v1", new OpenApiInfo
@@ -95,7 +95,7 @@ app.UseSwaggerUI(options =>
 
 app.MapControllers();
 
-app.UseAuthentication();
+//app.UseAuthentication();
 
 app.UseAuthorization();
 

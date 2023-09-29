@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Healthy_Clinic_Manha_Edu</name>
+    </assembly>
+    <members>
+        <member name="T:Healthy_Clinic_Manha_Edu.Migrations.Healthy_Clinic_Manha_Edu">
+            <inheritdoc />
+        </member>
+        <member name="M:Healthy_Clinic_Manha_Edu.Migrations.Healthy_Clinic_Manha_Edu.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:Healthy_Clinic_Manha_Edu.Migrations.Healthy_Clinic_Manha_Edu.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:Healthy_Clinic_Manha_Edu.Migrations.Healthy_Clinic_Manha_Edu.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
+    </members>
+</doc>

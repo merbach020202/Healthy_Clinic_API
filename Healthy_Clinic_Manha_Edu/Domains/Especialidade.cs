@@ -7,7 +7,7 @@ namespace Healthy_Clinic_Manha_Edu.Domains
     public class Especialidade
     {
         [Key]
-        public Guid IdEspecialdiades { get; set; } = Guid.NewGuid();
+        public Guid IdEspecialidades { get; set; } = Guid.NewGuid();
 
         [Column(TypeName = "VARCHAR(20)")]
         public string? EspecialidadesMedico { get; set; }

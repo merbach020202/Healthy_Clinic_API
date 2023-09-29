@@ -7,26 +7,23 @@ using Microsoft.AspNetCore.Mvc;
 namespace Healthy_Clinic_Manha_Edu.Controllers
 {
     [Route("api/[controller]")]
-
     [ApiController]
-
     [Produces("application/json")]
-    public class AdministradorController : ControllerBase
+    public class EspecialidadeController : ControllerBase
     {
-        private IAdministradorRepository _administrador;
+        private EspecialidadeRepository _especialidade;
 
-            public AdministradorController()
+        public EspecialidadeController()
         {
-            _administrador = new AdministradorRepository();
+            _especialidade = new EspecialidadeRepository();
         }
 
-
         [HttpPost]
-        public IActionResult Post (Administrador administrador)
+        public IActionResult Cadastrar(Especialidade especialidade)
         {
             try
             {
-                _administrador.Cadastrar(administrador);
+                _especialidade.Cadastrar(especialidade);
 
                 return StatusCode(201);
             }
@@ -37,11 +34,11 @@ namespace Healthy_Clinic_Manha_Edu.Controllers
         }
 
         [HttpDelete("{id}")]
-        public IActionResult Delete(Guid id) 
+        public IActionResult Deletar(Guid id)
         {
             try
             {
-                _administrador.Deletar(id);
+                _especialidade.Deletar(id);
 
                 return StatusCode(201);
             }
@@ -50,13 +47,12 @@ namespace Healthy_Clinic_Manha_Edu.Controllers
                 return BadRequest(e.Message);
             }
         }
-
         [HttpGet]
-        public IActionResult Get() 
+        public IActionResult Listar()
         {
             try
             {
-                return Ok(_administrador.Listar());
+                return Ok(_especialidade.Listar());
             }
             catch (Exception e)
             {

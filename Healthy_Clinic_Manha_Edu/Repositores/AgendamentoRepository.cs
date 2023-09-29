@@ -1,6 +1,7 @@
 ﻿using Healthy_Clinic_Manha_Edu.Contexts;
 using Healthy_Clinic_Manha_Edu.Domains;
 using Healthy_Clinic_Manha_Edu.Interfaces;
+using Healthy_Clinic_Manha_Edu.Utils;
 
 namespace Healthy_Clinic_Manha_Edu.Repositores
 {
@@ -28,22 +29,28 @@ namespace Healthy_Clinic_Manha_Edu.Repositores
 
         public Agendamento BuscarPorId(Guid id)
         {
-            throw new NotImplementedException();
+            return _context.Agendamento.FirstOrDefault(e => e.IdAgendamento == id);
         }
 
         public void Cadastrar(Agendamento agendamento)
         {
-            throw new NotImplementedException();
+            _context.Agendamento.Add(agendamento);
+
+            _context.SaveChanges();
         }
 
         public void Deletar(Guid id)
         {
-            throw new NotImplementedException();
+            Agendamento agendamentoBuscado = _context.Agendamento.Find(id);
+
+            _context.Agendamento.Remove(agendamentoBuscado);
+
+            _context.SaveChanges();
         }
 
         public List<Agendamento> Listar()
         {
-            throw new NotImplementedException();
+            return _context.Agendamento.ToList();
         }
     }
 }

@@ -11,22 +11,21 @@ namespace Healthy_Clinic_Manha_Edu.Controllers
     [ApiController]
 
     [Produces("application/json")]
-    public class AdministradorController : ControllerBase
+    public class AgendamentoController : ControllerBase
     {
-        private IAdministradorRepository _administrador;
+        private IAgendamentoRepository _agendamento;
 
-            public AdministradorController()
+        public AgendamentoController()
         {
-            _administrador = new AdministradorRepository();
+            _agendamento = new AgendamentoRepository();
         }
-
 
         [HttpPost]
-        public IActionResult Post (Administrador administrador)
+        public IActionResult Cadastrar(Agendamento agendamento)
         {
             try
             {
-                _administrador.Cadastrar(administrador);
+                _agendamento.Cadastrar(agendamento);
 
                 return StatusCode(201);
             }
@@ -36,12 +35,12 @@ namespace Healthy_Clinic_Manha_Edu.Controllers
             }
         }
 
-        [HttpDelete("{id}")]
-        public IActionResult Delete(Guid id) 
+        [HttpPut]
+        public IActionResult Atualizar (Guid id, Agendamento agendamento)
         {
             try
             {
-                _administrador.Deletar(id);
+                _agendamento.Atualizar(id, agendamento);
 
                 return StatusCode(201);
             }
@@ -51,17 +50,5 @@ namespace Healthy_Clinic_Manha_Edu.Controllers
             }
         }
 
-        [HttpGet]
-        public IActionResult Get() 
-        {
-            try
-            {
-                return Ok(_administrador.Listar());
-            }
-            catch (Exception e)
-            {
-                return BadRequest(e.Message);
-            }
-        }
     }
 }

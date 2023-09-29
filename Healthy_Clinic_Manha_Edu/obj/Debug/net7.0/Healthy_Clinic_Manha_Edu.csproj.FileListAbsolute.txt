@@ -83,3 +83,5 @@ C:\Users\44850641822\Desktop\VisualStudio\Healthy_Clinic (VISUAL STUDIO)\Healthy
 C:\Users\44850641822\Desktop\VisualStudio\Healthy_Clinic (VISUAL STUDIO)\Healthy_Clinic_Manha_Edu\bin\Debug\net7.0\DateOnlyTimeOnly.AspNet.dll
 C:\Users\44850641822\Desktop\VisualStudio\Healthy_Clinic (VISUAL STUDIO)\Healthy_Clinic_Manha_Edu\bin\Debug\net7.0\EntityFrameworkCore.SqlServer.DateOnlyTimeOnly.dll
 C:\Users\44850641822\Desktop\VisualStudio\Healthy_Clinic (VISUAL STUDIO)\Healthy_Clinic_Manha_Edu\obj\Debug\net7.0\EFCoreSqlServerDateOnlyTimeOnly.cs
+C:\Users\44850641822\Desktop\VisualStudio\Healthy_Clinic (VISUAL STUDIO)\Healthy_Clinic_Manha_Edu\bin\Debug\net7.0\Healthy_Clinic_Manha_Edu.xml
+C:\Users\44850641822\Desktop\VisualStudio\Healthy_Clinic (VISUAL STUDIO)\Healthy_Clinic_Manha_Edu\obj\Debug\net7.0\Healthy_Clinic_Manha_Edu.xml
