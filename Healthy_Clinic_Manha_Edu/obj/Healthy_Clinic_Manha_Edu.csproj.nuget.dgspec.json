@@ -1,20 +1,24 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\44850641822\\Desktop\\VisualStudio\\Healthy_Clinic (VISUAL STUDIO)\\Healthy_Clinic_Manha_Edu\\Healthy_Clinic_Manha_Edu.csproj": {}
+    "C:\\Users\\tiago\\OneDrive\\Eduardo\\PROGRAMAÇÃO\\Healthy_Clinic(VISUAL STUDIO)\\Healthy_Clinic_API\\Healthy_Clinic_Manha_Edu\\Healthy_Clinic_Manha_Edu.csproj": {}
   },
   "projects": {
-    "C:\\Users\\44850641822\\Desktop\\VisualStudio\\Healthy_Clinic (VISUAL STUDIO)\\Healthy_Clinic_Manha_Edu\\Healthy_Clinic_Manha_Edu.csproj": {
+    "C:\\Users\\tiago\\OneDrive\\Eduardo\\PROGRAMAÇÃO\\Healthy_Clinic(VISUAL STUDIO)\\Healthy_Clinic_API\\Healthy_Clinic_Manha_Edu\\Healthy_Clinic_Manha_Edu.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\44850641822\\Desktop\\VisualStudio\\Healthy_Clinic (VISUAL STUDIO)\\Healthy_Clinic_Manha_Edu\\Healthy_Clinic_Manha_Edu.csproj",
+        "projectUniqueName": "C:\\Users\\tiago\\OneDrive\\Eduardo\\PROGRAMAÇÃO\\Healthy_Clinic(VISUAL STUDIO)\\Healthy_Clinic_API\\Healthy_Clinic_Manha_Edu\\Healthy_Clinic_Manha_Edu.csproj",
         "projectName": "Healthy_Clinic_Manha_Edu",
-        "projectPath": "C:\\Users\\44850641822\\Desktop\\VisualStudio\\Healthy_Clinic (VISUAL STUDIO)\\Healthy_Clinic_Manha_Edu\\Healthy_Clinic_Manha_Edu.csproj",
-        "packagesPath": "C:\\Users\\44850641822\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\44850641822\\Desktop\\VisualStudio\\Healthy_Clinic (VISUAL STUDIO)\\Healthy_Clinic_Manha_Edu\\obj\\",
+        "projectPath": "C:\\Users\\tiago\\OneDrive\\Eduardo\\PROGRAMAÇÃO\\Healthy_Clinic(VISUAL STUDIO)\\Healthy_Clinic_API\\Healthy_Clinic_Manha_Edu\\Healthy_Clinic_Manha_Edu.csproj",
+        "packagesPath": "C:\\Users\\tiago\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\tiago\\OneDrive\\Eduardo\\PROGRAMAÇÃO\\Healthy_Clinic(VISUAL STUDIO)\\Healthy_Clinic_API\\Healthy_Clinic_Manha_Edu\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "C:\\Users\\44850641822\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\tiago\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -22,6 +26,7 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -108,7 +113,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.100\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.400\\RuntimeIdentifierGraph.json"
         }
       }
     }

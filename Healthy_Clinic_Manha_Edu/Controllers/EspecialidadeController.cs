@@ -47,6 +47,7 @@ namespace Healthy_Clinic_Manha_Edu.Controllers
                 return BadRequest(e.Message);
             }
         }
+        //oi, tudo bem
         [HttpGet]
         public IActionResult Listar()
         {
