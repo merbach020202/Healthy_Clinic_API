@@ -8,7 +8,7 @@ namespace Healthy_Clinic_Manha_Edu.Interfaces
 
         void Deletar(Guid id);
 
-        List<Agendamento> Listar();
+        List<Comentario> Listar();
 
         Comentario BuscarPorId(Guid id);
     }

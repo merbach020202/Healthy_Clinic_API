@@ -10,6 +10,6 @@ namespace Healthy_Clinic_Manha_Edu.Interfaces
         
         List<Paciente> Listar();
 
-        void BuscarPorId(Guid id, Paciente paciente);
+        Paciente BuscarPorId(Guid id);
     }
 }

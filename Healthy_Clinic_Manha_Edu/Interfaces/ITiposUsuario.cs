@@ -6,8 +6,8 @@ namespace Healthy_Clinic_Manha_Edu.Interfaces
     {
         void Cadastrar(TiposUsuario tiposUsuario);
 
-        void Deletar(TiposUsuario tiposUsuario);
+        void Deletar(Guid id);
 
-        List<TiposUsuario> tiposUsuarios();
+        List<TiposUsuario> Listar();
     }
 }

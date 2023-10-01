@@ -7,7 +7,7 @@ namespace Healthy_Clinic_Manha_Edu.Domains
     public class Comentario
     {
         [Key]
-        public Guid DescricaoComentarios { get; set; } = Guid.NewGuid();
+        public Guid IdComentario { get; set; } = Guid.NewGuid();
 
 
         //Referências

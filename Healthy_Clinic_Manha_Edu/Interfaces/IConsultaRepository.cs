@@ -11,7 +11,5 @@ namespace Healthy_Clinic_Manha_Edu.Interfaces
         List<Consulta> Listar();
 
         Consulta BuscarPorId(Guid id);
-
-        void Atualizar(Guid id, Consulta consulta);
     }
 }

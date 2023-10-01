@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "eMYwWqR39THDL70iknvGbLjE5BLqAvvZ9HwCsMSEXiOIr1cmeDEFYbkYlLhoHXF6oraHg8/ngPVIVMNI/e1XRA==",
+  "dgSpecHash": "3DgPQirc9EboEQ3a/xe0ryiylIm5yhKC7HfLJzfWuWYAGlZcsMS8Zf70D8KZv6GJnoLalv6H2OCI4qyJ4oaDqA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\tiago\\OneDrive\\Eduardo\\PROGRAMAÇÃO\\Healthy_Clinic(VISUAL STUDIO)\\Healthy_Clinic_API\\Healthy_Clinic_Manha_Edu\\Healthy_Clinic_Manha_Edu.csproj",
+  "projectFilePath": "C:\\Users\\tiago\\OneDrive\\Eduardo\\PROGRAMAÇÃO\\Visual Studio\\Healthy_Clinic_API\\Healthy_Clinic_Manha_Edu\\Healthy_Clinic_Manha_Edu.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\tiago\\.nuget\\packages\\azure.core\\1.25.0\\azure.core.1.25.0.nupkg.sha512",
     "C:\\Users\\tiago\\.nuget\\packages\\azure.identity\\1.7.0\\azure.identity.1.7.0.nupkg.sha512",

@@ -9,21 +9,36 @@ namespace Healthy_Clinic_Manha_Edu.Controllers
     [Route("api/[controller]")]
     [ApiController]
     [Produces("application/json")]
-    public class EspecialidadeController : ControllerBase
+    public class UsuarioController : ControllerBase
     {
-        private EspecialidadeRepository _especialidade;
+        private IUsuarioRepository _usuario;
 
-        public EspecialidadeController()
+        public UsuarioController()
         {
-            _especialidade = new EspecialidadeRepository();
+            _usuario = new UsuarioRepository();
         }
 
-        [HttpPost]
-        public IActionResult Cadastrar(Especialidade especialidade)
+
+        [HttpGet]
+        public IActionResult Get()
         {
             try
             {
-                _especialidade.Cadastrar(especialidade);
+                return Ok(_usuario.Listar());
+            }
+            catch (Exception e)
+            {
+                return BadRequest(e.Message);
+            }
+        }
+
+        [HttpPost]
+
+        public IActionResult Post(Usuario usuario)
+        {
+            try
+            {
+                _usuario.Cadastrar(usuario);
 
                 return StatusCode(201);
             }
@@ -34,11 +49,11 @@ namespace Healthy_Clinic_Manha_Edu.Controllers
         }
 
         [HttpDelete("{id}")]
-        public IActionResult Deletar(Guid id)
+        public IActionResult Delete(Guid id)
         {
             try
             {
-                _especialidade.Deletar(id);
+                _usuario.Deletar(id);
 
                 return StatusCode(201);
             }
@@ -46,13 +61,15 @@ namespace Healthy_Clinic_Manha_Edu.Controllers
             {
                 return BadRequest(e.Message);
             }
+
         }
-        [HttpGet]
-        public IActionResult Listar()
+
+        [HttpGet("{id}")]
+        public IActionResult BuscarPorId(Guid id)
         {
             try
             {
-                return Ok(_especialidade.Listar());
+                return Ok(_usuario.BuscarPorId(id));
             }
             catch (Exception e)
             {

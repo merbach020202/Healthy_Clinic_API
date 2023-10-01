@@ -9,21 +9,36 @@ namespace Healthy_Clinic_Manha_Edu.Controllers
     [Route("api/[controller]")]
     [ApiController]
     [Produces("application/json")]
-    public class EspecialidadeController : ControllerBase
+    public class ConsultaController : ControllerBase
     {
-        private EspecialidadeRepository _especialidade;
+        private IConsultaRepository _consulta;
 
-        public EspecialidadeController()
+        public ConsultaController()
         {
-            _especialidade = new EspecialidadeRepository();
+            _consulta = new ConsultaRepository();
         }
 
-        [HttpPost]
-        public IActionResult Cadastrar(Especialidade especialidade)
+
+        [HttpGet]
+        public IActionResult Get()
         {
             try
             {
-                _especialidade.Cadastrar(especialidade);
+                return Ok(_consulta.Listar());
+            }
+            catch (Exception e)
+            {
+                return BadRequest(e.Message);
+            }
+        }
+
+        [HttpPost]
+
+        public IActionResult Post(Consulta consulta)
+        {
+            try
+            {
+                _consulta.Cadastrar(consulta);
 
                 return StatusCode(201);
             }
@@ -34,11 +49,11 @@ namespace Healthy_Clinic_Manha_Edu.Controllers
         }
 
         [HttpDelete("{id}")]
-        public IActionResult Deletar(Guid id)
+        public IActionResult Delete(Guid id)
         {
             try
             {
-                _especialidade.Deletar(id);
+                _consulta.Deletar(id);
 
                 return StatusCode(201);
             }
@@ -46,13 +61,15 @@ namespace Healthy_Clinic_Manha_Edu.Controllers
             {
                 return BadRequest(e.Message);
             }
+
         }
-        [HttpGet]
-        public IActionResult Listar()
+
+        [HttpGet("{id}")]
+        public IActionResult BuscarPorId(Guid id)
         {
             try
             {
-                return Ok(_especialidade.Listar());
+                return Ok(_consulta.BuscarPorId(id));
             }
             catch (Exception e)
             {

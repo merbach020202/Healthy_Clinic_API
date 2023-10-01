@@ -9,21 +9,35 @@ namespace Healthy_Clinic_Manha_Edu.Controllers
     [Route("api/[controller]")]
     [ApiController]
     [Produces("application/json")]
-    public class EspecialidadeController : ControllerBase
+    public class TiposUsuarioController : ControllerBase
     {
-        private EspecialidadeRepository _especialidade;
+        private ITiposUsuario _tiposUsuario;
 
-        public EspecialidadeController()
+        public TiposUsuarioController()
         {
-            _especialidade = new EspecialidadeRepository();
+            _tiposUsuario = new TiposUsuarioRepository();
         }
 
-        [HttpPost]
-        public IActionResult Cadastrar(Especialidade especialidade)
+        [HttpGet]
+        public IActionResult Get()
         {
             try
             {
-                _especialidade.Cadastrar(especialidade);
+                return Ok(_tiposUsuario.Listar());
+            }
+            catch (Exception e)
+            {
+                return BadRequest(e.Message);
+            }
+        }
+
+        [HttpPost]
+
+        public IActionResult Post(TiposUsuario tiposUsuario)
+        {
+            try
+            {
+                _tiposUsuario.Cadastrar(tiposUsuario);
 
                 return StatusCode(201);
             }
@@ -34,11 +48,11 @@ namespace Healthy_Clinic_Manha_Edu.Controllers
         }
 
         [HttpDelete("{id}")]
-        public IActionResult Deletar(Guid id)
+        public IActionResult Delete(Guid id)
         {
             try
             {
-                _especialidade.Deletar(id);
+                _tiposUsuario.Deletar(id);
 
                 return StatusCode(201);
             }
@@ -46,18 +60,7 @@ namespace Healthy_Clinic_Manha_Edu.Controllers
             {
                 return BadRequest(e.Message);
             }
-        }
-        [HttpGet]
-        public IActionResult Listar()
-        {
-            try
-            {
-                return Ok(_especialidade.Listar());
-            }
-            catch (Exception e)
-            {
-                return BadRequest(e.Message);
-            }
+
         }
     }
 }

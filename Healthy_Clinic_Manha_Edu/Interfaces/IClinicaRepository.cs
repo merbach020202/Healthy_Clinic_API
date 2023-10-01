@@ -9,5 +9,7 @@ namespace Healthy_Clinic_Manha_Edu.Interfaces
         void Deletar(Guid id);
 
         Clinica BuscarPorId(Guid id);
+
+        List<Clinica> Listar();
     }
 }

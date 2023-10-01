@@ -8,9 +8,7 @@ namespace Healthy_Clinic_Manha_Edu.Interfaces
 
         void Deletar(Guid id);
 
-        void BuscarPorId(Guid id);
-
-        void Atualizar(Guid id, Usuario usuario);
+        Usuario BuscarPorId(Guid id);
 
         List<Usuario> Listar();
     }

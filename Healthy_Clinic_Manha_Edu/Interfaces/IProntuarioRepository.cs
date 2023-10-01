@@ -8,9 +8,7 @@ namespace Healthy_Clinic_Manha_Edu.Interfaces
 
         void Deletar(Guid id);
 
-        void Atualizar(Guid id, Prontuario prontuario);
-
-        void BuscarPorId(Guid id);
+        Prontuario BuscarPorId(Guid id);
         
         List<Prontuario> Listar();
     }
