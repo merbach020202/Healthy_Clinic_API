@@ -18,7 +18,7 @@ namespace Healthy_Clinic_Manha_Edu.Repositores
         {
             try
             {
-                administrador.Senha = Criptografia.GerarHash(administrador.Senha);
+                administrador.Usuario.Senha = Criptografia.GerarHash(administrador.Usuario.Senha);
 
                 _context.Administrador.Add(administrador);
 

@@ -10,6 +10,7 @@ namespace Healthy_Clinic_Manha_Edu.Domains
         public Guid IdEspecialidades { get; set; } = Guid.NewGuid();
 
         [Column(TypeName = "VARCHAR(20)")]
-        public string? EspecialidadesMedico { get; set; }
+        [Required(ErrorMessage = "A especialidade do médico é obrigatória")]
+        public string? NomeEspecialidade { get; set; }
     }
 }

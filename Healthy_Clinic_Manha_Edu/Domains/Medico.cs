@@ -15,26 +15,21 @@ namespace Healthy_Clinic_Manha_Edu.Domains
         [Required(ErrorMessage ="O nome do médico é obrigatório")]
         public string? Nome { get; set; }
 
-        [Column(TypeName = "VARCHAR(50)")]
-        [Required(ErrorMessage = "O Email é obrigatório")]
-        public string? Email { get; set; }
-
-        [Column(TypeName = "VARCHAR(50)")]
-        [Required(ErrorMessage = "a senha é obrigatória")]
-        [StringLength(50, MinimumLength = 5, ErrorMessage = "A senha deve conter de 5 a 50 caracteres")]
-        public string? Senha { get; set; }
-
         [Column(TypeName = "VARCHAR(6)")]
         [Required(ErrorMessage = "O CRM é obrigatório")]
         [StringLength(6, MinimumLength = 6, ErrorMessage = "O CRM deve conter 6 caracteres")]
         public string CRM { get; set; }
 
+        [Column(TypeName = "VARCHAR(50)")]
+        [Required(ErrorMessage = "O número do médico é obrigatório")]
+        public string? Telefone { get; set; }
+
 
         //Referências
-        public Guid IdUsuario { get; set; }
+        public Guid IdTipoEspecialidade { get; set; }
 
-        [ForeignKey(nameof(IdUsuario))]
-        public Usuario? Usuario { get; set; }
+        [ForeignKey(nameof(IdTipoEspecialidade))]
+        public TiposUsuario? TiposUsuario { get; set; }
 
 
         public Guid IdClinica { get; set; }
@@ -47,5 +42,11 @@ namespace Healthy_Clinic_Manha_Edu.Domains
 
         [ForeignKey(nameof(IdEspecialidades))]
         public Especialidade? Especialidades { get; set; }
+
+
+        public Guid IdUsuario { get; set; }
+
+        [ForeignKey(nameof(IdUsuario))]
+        public Usuario? Usuario { get; set; }
     }
 }

@@ -9,7 +9,7 @@ namespace Healthy_Clinic_Manha_Edu.Domains
         [Key]
         public Guid IdProntuario { get; set; } = Guid.NewGuid();
 
-        [Column(TypeName ="VARCHAR(100)")]
+        [Column(TypeName ="TEXT")]
         public string? DescricaoConsulta { get; set; }
     }
 }

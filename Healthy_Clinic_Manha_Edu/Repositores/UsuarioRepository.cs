@@ -1,6 +1,7 @@
 ﻿using Healthy_Clinic_Manha_Edu.Contexts;
 using Healthy_Clinic_Manha_Edu.Domains;
 using Healthy_Clinic_Manha_Edu.Interfaces;
+using Healthy_Clinic_Manha_Edu.Utils;
 
 namespace Healthy_Clinic_Manha_Edu.Repositores
 {
@@ -19,9 +20,20 @@ namespace Healthy_Clinic_Manha_Edu.Repositores
 
         public void Cadastrar(Usuario usuario)
         {
-            _evento.Usuario.Add(usuario);
+            try
+            {
+                usuario.Senha = Criptografia.GerarHash(usuario.Senha);
 
-            _evento.SaveChanges();
+                _evento.Usuario.Add(usuario);
+
+                _evento.SaveChanges();
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+
         }
 
         public void Deletar(Guid id)

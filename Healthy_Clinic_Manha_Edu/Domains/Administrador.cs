@@ -9,13 +9,11 @@ namespace Healthy_Clinic_Manha_Edu.Domains
         [Key]
         public Guid IdAdministrador { get; set; } = Guid.NewGuid();
 
-        [Column(TypeName ="VARCHAR(50)")]
-        public string? Email { get; set; }
-
         [Column(TypeName = "VARCHAR(50)")]
-        public string? Senha { get; set; }
+        [Required(ErrorMessage = "O Nome é obrigatório")]
+        public string? Nome { get; set; }
 
-
+   
         //Referências
         [Required(ErrorMessage ="Informe o tipo de usuário")]
         public Guid IdUsuario { get; set; }

@@ -9,6 +9,10 @@ namespace Healthy_Clinic_Manha_Edu.Domains
         [Key]
         public Guid IdComentario { get; set; } = Guid.NewGuid();
 
+        
+        [Column(TypeName = "VARCHAR(100)")]
+        public string? DescricaoComentario { get; set;}
+
 
         //Referências
         [Required(ErrorMessage ="O nome do paciente é obrigatório")]

@@ -12,7 +12,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Healthy_Clinic_Manha_Edu.Migrations
 {
     [DbContext(typeof(Context))]
-    [Migration("20230929105758_Healthy_Clinic_Manha_Edu")]
+    [Migration("20231002133545_Healthy_Clinic_Manha_Edu")]
     partial class Healthy_Clinic_Manha_Edu
     {
         /// <inheritdoc />
@@ -31,13 +31,11 @@ namespace Healthy_Clinic_Manha_Edu.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uniqueidentifier");
 
-                    b.Property<string>("Email")
-                        .HasColumnType("VARCHAR(50)");
-
                     b.Property<Guid>("IdUsuario")
                         .HasColumnType("uniqueidentifier");
 
-                    b.Property<string>("Senha")
+                    b.Property<string>("Nome")
+                        .IsRequired()
                         .HasColumnType("VARCHAR(50)");
 
                     b.HasKey("IdAdministrador");
@@ -61,22 +59,7 @@ namespace Healthy_Clinic_Manha_Edu.Migrations
                         .IsRequired()
                         .HasColumnType("TIME");
 
-                    b.Property<Guid>("IdAdministrador")
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<Guid>("IdMedico")
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<Guid>("IdPaciente")
-                        .HasColumnType("uniqueidentifier");
-
                     b.HasKey("IdAgendamento");
-
-                    b.HasIndex("IdAdministrador");
-
-                    b.HasIndex("IdMedico");
-
-                    b.HasIndex("IdPaciente");
 
                     b.ToTable("Agendamento");
                 });
@@ -118,9 +101,12 @@ namespace Healthy_Clinic_Manha_Edu.Migrations
 
             modelBuilder.Entity("Healthy_Clinic_Manha_Edu.Domains.Comentario", b =>
                 {
-                    b.Property<Guid>("DescricaoComentarios")
+                    b.Property<Guid>("IdComentario")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("DescricaoComentario")
+                        .HasColumnType("VARCHAR(100)");
 
                     b.Property<Guid>("IdConsulta")
                         .HasColumnType("uniqueidentifier");
@@ -131,7 +117,7 @@ namespace Healthy_Clinic_Manha_Edu.Migrations
                     b.Property<Guid>("IdPaciente")
                         .HasColumnType("uniqueidentifier");
 
-                    b.HasKey("DescricaoComentarios");
+                    b.HasKey("IdComentario");
 
                     b.HasIndex("IdConsulta");
 
@@ -148,13 +134,8 @@ namespace Healthy_Clinic_Manha_Edu.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uniqueidentifier");
 
-                    b.Property<DateTime?>("DataConsulta")
-                        .IsRequired()
-                        .HasColumnType("DATE");
-
-                    b.Property<TimeSpan?>("HorarioConsulta")
-                        .IsRequired()
-                        .HasColumnType("TIME");
+                    b.Property<Guid>("IdAgendamento")
+                        .HasColumnType("uniqueidentifier");
 
                     b.Property<Guid>("IdMedico")
                         .HasColumnType("uniqueidentifier");
@@ -167,6 +148,8 @@ namespace Healthy_Clinic_Manha_Edu.Migrations
 
                     b.HasKey("IdConsulta");
 
+                    b.HasIndex("IdAgendamento");
+
                     b.HasIndex("IdMedico");
 
                     b.HasIndex("IdProntuario");
@@ -178,14 +161,15 @@ namespace Healthy_Clinic_Manha_Edu.Migrations
 
             modelBuilder.Entity("Healthy_Clinic_Manha_Edu.Domains.Especialidade", b =>
                 {
-                    b.Property<Guid>("IdEspecialdiades")
+                    b.Property<Guid>("IdEspecialidades")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uniqueidentifier");
 
-                    b.Property<string>("EspecialidadesMedico")
+                    b.Property<string>("NomeEspecialidade")
+                        .IsRequired()
                         .HasColumnType("VARCHAR(20)");
 
-                    b.HasKey("IdEspecialdiades");
+                    b.HasKey("IdEspecialidades");
 
                     b.ToTable("Especialidade");
                 });
@@ -201,14 +185,13 @@ namespace Healthy_Clinic_Manha_Edu.Migrations
                         .HasMaxLength(6)
                         .HasColumnType("VARCHAR(6)");
 
-                    b.Property<string>("Email")
-                        .IsRequired()
-                        .HasColumnType("VARCHAR(50)");
-
                     b.Property<Guid>("IdClinica")
                         .HasColumnType("uniqueidentifier");
 
                     b.Property<Guid>("IdEspecialidades")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<Guid>("IdTipoEspecialidade")
                         .HasColumnType("uniqueidentifier");
 
                     b.Property<Guid>("IdUsuario")
@@ -218,9 +201,8 @@ namespace Healthy_Clinic_Manha_Edu.Migrations
                         .IsRequired()
                         .HasColumnType("VARCHAR(50)");
 
-                    b.Property<string>("Senha")
+                    b.Property<string>("Telefone")
                         .IsRequired()
-                        .HasMaxLength(50)
                         .HasColumnType("VARCHAR(50)");
 
                     b.HasKey("IdMedico");
@@ -231,6 +213,8 @@ namespace Healthy_Clinic_Manha_Edu.Migrations
                     b.HasIndex("IdClinica");
 
                     b.HasIndex("IdEspecialidades");
+
+                    b.HasIndex("IdTipoEspecialidade");
 
                     b.HasIndex("IdUsuario");
 
@@ -243,7 +227,7 @@ namespace Healthy_Clinic_Manha_Edu.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uniqueidentifier");
 
-                    b.Property<string>("Email")
+                    b.Property<string>("Endereco")
                         .IsRequired()
                         .HasColumnType("VARCHAR(50)");
 
@@ -252,11 +236,6 @@ namespace Healthy_Clinic_Manha_Edu.Migrations
 
                     b.Property<string>("Nome")
                         .IsRequired()
-                        .HasColumnType("VARCHAR(50)");
-
-                    b.Property<string>("Senha")
-                        .IsRequired()
-                        .HasMaxLength(50)
                         .HasColumnType("VARCHAR(50)");
 
                     b.HasKey("IdPaciente");
@@ -273,7 +252,7 @@ namespace Healthy_Clinic_Manha_Edu.Migrations
                         .HasColumnType("uniqueidentifier");
 
                     b.Property<string>("DescricaoConsulta")
-                        .HasColumnType("VARCHAR(100)");
+                        .HasColumnType("TEXT");
 
                     b.HasKey("IdProntuario");
 
@@ -286,7 +265,7 @@ namespace Healthy_Clinic_Manha_Edu.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uniqueidentifier");
 
-                    b.Property<string>("tiposUsuario")
+                    b.Property<string>("Nome")
                         .IsRequired()
                         .HasColumnType("VARCHAR(20)");
 
@@ -305,11 +284,16 @@ namespace Healthy_Clinic_Manha_Edu.Migrations
                         .IsRequired()
                         .HasColumnType("VARCHAR(50)");
 
+                    b.Property<Guid>("IdTiposUsuario")
+                        .HasColumnType("uniqueidentifier");
+
                     b.Property<string>("Senha")
                         .IsRequired()
                         .HasColumnType("VARCHAR(50)");
 
                     b.HasKey("IdUsuario");
+
+                    b.HasIndex("IdTiposUsuario");
 
                     b.ToTable("Usuario");
                 });
@@ -323,33 +307,6 @@ namespace Healthy_Clinic_Manha_Edu.Migrations
                         .IsRequired();
 
                     b.Navigation("Usuario");
-                });
-
-            modelBuilder.Entity("Healthy_Clinic_Manha_Edu.Domains.Agendamento", b =>
-                {
-                    b.HasOne("Healthy_Clinic_Manha_Edu.Domains.Administrador", "administrador")
-                        .WithMany()
-                        .HasForeignKey("IdAdministrador")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("Healthy_Clinic_Manha_Edu.Domains.Medico", "medico")
-                        .WithMany()
-                        .HasForeignKey("IdMedico")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("Healthy_Clinic_Manha_Edu.Domains.Paciente", "paciente")
-                        .WithMany()
-                        .HasForeignKey("IdPaciente")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("administrador");
-
-                    b.Navigation("medico");
-
-                    b.Navigation("paciente");
                 });
 
             modelBuilder.Entity("Healthy_Clinic_Manha_Edu.Domains.Comentario", b =>
@@ -381,6 +338,12 @@ namespace Healthy_Clinic_Manha_Edu.Migrations
 
             modelBuilder.Entity("Healthy_Clinic_Manha_Edu.Domains.Consulta", b =>
                 {
+                    b.HasOne("Healthy_Clinic_Manha_Edu.Domains.Agendamento", "agendamento")
+                        .WithMany()
+                        .HasForeignKey("IdAgendamento")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
                     b.HasOne("Healthy_Clinic_Manha_Edu.Domains.Medico", "medico")
                         .WithMany()
                         .HasForeignKey("IdMedico")
@@ -398,6 +361,8 @@ namespace Healthy_Clinic_Manha_Edu.Migrations
                         .HasForeignKey("Idpaciente")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
+
+                    b.Navigation("agendamento");
 
                     b.Navigation("medico");
 
@@ -420,6 +385,12 @@ namespace Healthy_Clinic_Manha_Edu.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
+                    b.HasOne("Healthy_Clinic_Manha_Edu.Domains.TiposUsuario", "TiposUsuario")
+                        .WithMany()
+                        .HasForeignKey("IdTipoEspecialidade")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
                     b.HasOne("Healthy_Clinic_Manha_Edu.Domains.Usuario", "Usuario")
                         .WithMany()
                         .HasForeignKey("IdUsuario")
@@ -430,18 +401,31 @@ namespace Healthy_Clinic_Manha_Edu.Migrations
 
                     b.Navigation("Especialidades");
 
+                    b.Navigation("TiposUsuario");
+
                     b.Navigation("Usuario");
                 });
 
             modelBuilder.Entity("Healthy_Clinic_Manha_Edu.Domains.Paciente", b =>
                 {
-                    b.HasOne("Healthy_Clinic_Manha_Edu.Domains.Usuario", "usuario")
+                    b.HasOne("Healthy_Clinic_Manha_Edu.Domains.Usuario", "Usuario")
                         .WithMany()
                         .HasForeignKey("IdUsuario")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.Navigation("usuario");
+                    b.Navigation("Usuario");
+                });
+
+            modelBuilder.Entity("Healthy_Clinic_Manha_Edu.Domains.Usuario", b =>
+                {
+                    b.HasOne("Healthy_Clinic_Manha_Edu.Domains.TiposUsuario", "TiposUsuario")
+                        .WithMany()
+                        .HasForeignKey("IdTiposUsuario")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("TiposUsuario");
                 });
 #pragma warning restore 612, 618
         }

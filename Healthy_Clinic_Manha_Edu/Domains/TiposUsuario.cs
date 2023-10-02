@@ -9,7 +9,8 @@ namespace Healthy_Clinic_Manha_Edu.Domains
         [Key]
         public Guid IdTiposUsuario { get; set; } = Guid.NewGuid();
 
+        [Required(ErrorMessage ="Nome do tipo do usuario é obrigatório")]
         [Column(TypeName ="VARCHAR(20)")]
-        public string tiposUsuario { get; set; }
+        public string? Nome { get; set; }
     }
 }

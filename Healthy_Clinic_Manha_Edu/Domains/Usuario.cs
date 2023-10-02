@@ -16,5 +16,13 @@ namespace Healthy_Clinic_Manha_Edu.Domains
         [Column(TypeName ="VARCHAR(50)")]
         [Required(ErrorMessage ="A senha é obrigatória")]
         public string? Senha { get; set; }
+
+
+        //Referência
+
+        public Guid IdTiposUsuario { get; set; }
+
+        [ForeignKey(nameof(IdTiposUsuario))]
+        public TiposUsuario? TiposUsuario { get; set; }
     }
 }
