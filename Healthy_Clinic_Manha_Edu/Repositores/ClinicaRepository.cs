@@ -1,6 +1,7 @@
 ﻿using Healthy_Clinic_Manha_Edu.Contexts;
 using Healthy_Clinic_Manha_Edu.Domains;
 using Healthy_Clinic_Manha_Edu.Interfaces;
+using Microsoft.EntityFrameworkCore;
 
 namespace Healthy_Clinic_Manha_Edu.Repositores
 {
@@ -14,16 +15,16 @@ namespace Healthy_Clinic_Manha_Edu.Repositores
 
         public void Atualizar(Guid id, Clinica clinica)
         {
-            try
-            {
-                _evento.Atualizar(id, clinica);
+            Clinica clinicaBuscada = _evento.Clinica.Find(id);
 
-                return Ok(_evento);
-            }
-            catch (Exception e)
+            if (clinicaBuscada != null)
             {
-                return BadRequest(e.Message);
+                clinicaBuscada.NomeFantasia = clinica.NomeFantasia;
             }
+
+            _evento.Clinica.Update(clinicaBuscada);
+
+            _evento.SaveChanges();
         }
 
         public Clinica BuscarPorId(Guid id)

@@ -8,8 +8,6 @@ namespace Healthy_Clinic_Manha_Edu.Interfaces
 
         void Deletar(Guid id);
 
-        List<Agendamento> Listar();
-
         Agendamento BuscarPorId(Guid id);
 
         void Atualizar(Guid id, Agendamento agendamento);

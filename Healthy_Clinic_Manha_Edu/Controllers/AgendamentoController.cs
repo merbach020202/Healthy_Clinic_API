@@ -35,6 +35,21 @@ namespace Healthy_Clinic_Manha_Edu.Controllers
             }
         }
 
+        [HttpDelete("{id}")]
+        public IActionResult Delete(Guid id)
+        {
+            try
+            {
+                _agendamento.Deletar(id);
+
+                return StatusCode(201);
+            }
+            catch (Exception e)
+            {
+                return BadRequest(e.Message);
+            }
+        }
+
         [HttpPut]
         public IActionResult Atualizar (Guid id, Agendamento agendamento)
         {
@@ -49,6 +64,5 @@ namespace Healthy_Clinic_Manha_Edu.Controllers
                 return BadRequest(e.Message);
             }
         }
-
     }
 }

@@ -47,10 +47,5 @@ namespace Healthy_Clinic_Manha_Edu.Repositores
 
             _context.SaveChanges();
         }
-
-        public List<Agendamento> Listar()
-        {
-            return _context.Agendamento.ToList();
-        }
     }
 }
