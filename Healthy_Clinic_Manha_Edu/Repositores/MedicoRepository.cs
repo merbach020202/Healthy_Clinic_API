@@ -19,8 +19,6 @@ namespace Healthy_Clinic_Manha_Edu.Repositores
 
         public void Cadastrar(Medico medico)
         {
-            medico.Usuario.Senha = Criptografia.GerarHash(medico.Usuario.Senha);
-
             _evento.Medico.Add(medico);
 
             _evento.SaveChanges();

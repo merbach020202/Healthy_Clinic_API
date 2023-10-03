@@ -18,8 +18,6 @@ namespace Healthy_Clinic_Manha_Edu.Repositores
         {
             try
             {
-                administrador.Usuario.Senha = Criptografia.GerarHash(administrador.Usuario.Senha);
-
                 _context.Administrador.Add(administrador);
 
                 _context.SaveChanges();

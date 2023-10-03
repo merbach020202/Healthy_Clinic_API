@@ -22,7 +22,7 @@ namespace Healthy_Clinic_Manha_Edu.Repositores
         {
             try
             {
-                usuario.Senha = Criptografia.GerarHash(usuario.Senha);
+                //usuario.Senha = Criptografia.GerarHash(usuario.Senha);
 
                 _evento.Usuario.Add(usuario);
 

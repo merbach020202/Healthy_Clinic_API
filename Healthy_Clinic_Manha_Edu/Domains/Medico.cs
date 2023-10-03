@@ -26,9 +26,9 @@ namespace Healthy_Clinic_Manha_Edu.Domains
 
 
         //Referências
-        public Guid IdTipoEspecialidade { get; set; }
+        public Guid IdTiposUsuario { get; set; }
 
-        [ForeignKey(nameof(IdTipoEspecialidade))]
+        [ForeignKey(nameof(IdTiposUsuario))]
         public TiposUsuario? TiposUsuario { get; set; }
 
 
