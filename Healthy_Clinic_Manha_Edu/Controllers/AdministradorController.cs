@@ -63,5 +63,33 @@ namespace Healthy_Clinic_Manha_Edu.Controllers
                 return BadRequest(e.Message);
             }
         }
+
+        [HttpPut]
+        public IActionResult Atualizar(Guid id, Administrador administrador)
+        {
+            try
+            {
+                _administrador.Atualizar(id, administrador);
+
+                return Ok(_administrador);
+            }
+            catch (Exception e)
+            {
+                return BadRequest(e.Message);
+            }
+        }
+
+        [HttpGet("{id}")]
+        public IActionResult BuscarPorId(Guid id)
+        {
+            try
+            {
+                return Ok(_administrador.BuscarPorId(id));
+            }
+            catch (Exception e)
+            {
+                return BadRequest(e.Message);
+            }
+        }
     }
 }

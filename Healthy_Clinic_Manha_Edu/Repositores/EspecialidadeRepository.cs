@@ -11,6 +11,26 @@ namespace Healthy_Clinic_Manha_Edu.Repositores
         {
             _evento = new Context();
         }
+
+        public void Atualizar(Guid id, Especialidade especialidade)
+        {
+            Especialidade especialidadeBuscada = _evento.Especialidade.Find(id);
+
+            if (especialidadeBuscada != null)
+            {
+                especialidadeBuscada.NomeEspecialidade = especialidade.NomeEspecialidade;
+            }
+
+            _evento.Especialidade.Update(especialidadeBuscada);
+
+            _evento.SaveChanges();
+        }
+
+        public Especialidade BuscarPorId(Guid id)
+        {
+            throw new NotImplementedException();
+        }
+
         public void Cadastrar(Especialidade especialidade)
         {
 

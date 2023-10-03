@@ -11,6 +11,12 @@ namespace Healthy_Clinic_Manha_Edu.Repositores
         {
             _evento = new Context();
         }
+
+        public TiposUsuario BuscarPorId(Guid id)
+        {
+            return _evento.TiposUsuario.FirstOrDefault(e => e.IdTiposUsuario == id);
+        }
+
         public void Cadastrar(TiposUsuario tiposUsuario)
         {
             _evento.TiposUsuario.Add(tiposUsuario);

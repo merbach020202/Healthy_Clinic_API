@@ -62,5 +62,18 @@ namespace Healthy_Clinic_Manha_Edu.Controllers
             }
 
         }
+
+        [HttpGet("{id}")]
+        public IActionResult BuscarPorId(Guid id)
+        {
+            try
+            {
+                return Ok(_tiposUsuario.BuscarPorId(id));
+            }
+            catch (Exception e)
+            {
+                return BadRequest(e.Message);
+            }
+        }
     }
 }

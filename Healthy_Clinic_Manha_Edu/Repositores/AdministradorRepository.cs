@@ -14,6 +14,25 @@ namespace Healthy_Clinic_Manha_Edu.Repositores
             _context = new Context();
         }
 
+        public void Atualizar(Guid id, Administrador administrador)
+        {
+            Administrador administradorBuscado = _context.Administrador.Find(id);
+
+            if (administradorBuscado != null)
+            {
+                administradorBuscado.Nome = administrador.Nome;
+            }
+
+            _context.Administrador.Update(administradorBuscado);
+
+            _context.SaveChanges();
+        }
+
+        public Administrador BuscarPorId(Guid id)
+        {
+            return _context.Administrador.FirstOrDefault(e => e.IdAdministrador == id);
+        }
+
         public void Cadastrar(Administrador administrador)
         {
             try

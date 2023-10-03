@@ -58,5 +58,20 @@ namespace Healthy_Clinic_Manha_Edu.Controllers
                 return BadRequest(e.Message);
             }
         }
+
+        [HttpPut]
+        public IActionResult Atualizar(Guid id, Especialidade especialidade)
+        {
+            try
+            {
+                _especialidade.Atualizar(id, especialidade);
+
+                return Ok(_especialidade);
+            }
+            catch (Exception e)
+            {
+                return BadRequest(e.Message);
+            }
+        }
     }
 }

@@ -7,5 +7,7 @@ namespace Healthy_Clinic_Manha_Edu.Interfaces
         void Cadastrar(Administrador administrador);
         void Deletar(Guid id);
         List<Administrador> Listar();
+        Administrador BuscarPorId(Guid id);
+        void Atualizar(Guid id, Administrador administrador);
     }
 }

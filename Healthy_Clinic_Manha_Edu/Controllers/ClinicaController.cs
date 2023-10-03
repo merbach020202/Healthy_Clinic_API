@@ -76,5 +76,20 @@ namespace Healthy_Clinic_Manha_Edu.Controllers
                 return BadRequest(e.Message);
             }
         }
+
+        [HttpPut]
+        public IActionResult Atualizar(Guid id, Clinica clinica)
+        {
+            try
+            {
+                _clinica.Atualizar(id, clinica);
+
+                return Ok(_clinica);
+            }
+            catch (Exception e)
+            {
+                return BadRequest(e.Message);
+            }
+        }
     }
 }

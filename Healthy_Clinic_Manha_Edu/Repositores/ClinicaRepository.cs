@@ -11,6 +11,21 @@ namespace Healthy_Clinic_Manha_Edu.Repositores
         {
             _evento = new Context();
         }
+
+        public void Atualizar(Guid id, Clinica clinica)
+        {
+            try
+            {
+                _evento.Atualizar(id, clinica);
+
+                return Ok(_evento);
+            }
+            catch (Exception e)
+            {
+                return BadRequest(e.Message);
+            }
+        }
+
         public Clinica BuscarPorId(Guid id)
         {
             return _evento.Clinica.FirstOrDefault(e => e.IdClinica == id);
