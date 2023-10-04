@@ -82,8 +82,9 @@ namespace Healthy_Clinic_Manha_Edu.Migrations
                 columns: table => new
                 {
                     IdUsuario = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
+                    Nome = table.Column<string>(type: "VARCHAR(50)", nullable: false),
                     Email = table.Column<string>(type: "VARCHAR(50)", nullable: false),
-                    Senha = table.Column<string>(type: "VARCHAR(50)", nullable: false),
+                    Senha = table.Column<string>(type: "VARCHAR(60)", nullable: false),
                     IdTiposUsuario = table.Column<Guid>(type: "uniqueidentifier", nullable: false)
                 },
                 constraints: table =>
@@ -94,7 +95,7 @@ namespace Healthy_Clinic_Manha_Edu.Migrations
                         column: x => x.IdTiposUsuario,
                         principalTable: "TiposUsuario",
                         principalColumn: "IdTiposUsuario",
-                        onDelete: ReferentialAction.NoAction);
+                        onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateTable(
@@ -124,7 +125,7 @@ namespace Healthy_Clinic_Manha_Edu.Migrations
                     Nome = table.Column<string>(type: "VARCHAR(50)", nullable: false),
                     CRM = table.Column<string>(type: "VARCHAR(6)", maxLength: 6, nullable: false),
                     Telefone = table.Column<string>(type: "VARCHAR(50)", nullable: false),
-                    IdTipoEspecialidade = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
+                    IdTiposUsuario = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
                     IdClinica = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
                     IdEspecialidades = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
                     IdUsuario = table.Column<Guid>(type: "uniqueidentifier", nullable: false)
@@ -145,8 +146,8 @@ namespace Healthy_Clinic_Manha_Edu.Migrations
                         principalColumn: "IdEspecialidades",
                         onDelete: ReferentialAction.NoAction);
                     table.ForeignKey(
-                        name: "FK_Medico_TiposUsuario_IdTipoEspecialidade",
-                        column: x => x.IdTipoEspecialidade,
+                        name: "FK_Medico_TiposUsuario_IdTiposUsuario",
+                        column: x => x.IdTiposUsuario,
                         principalTable: "TiposUsuario",
                         principalColumn: "IdTiposUsuario",
                         onDelete: ReferentialAction.NoAction);
@@ -307,9 +308,9 @@ namespace Healthy_Clinic_Manha_Edu.Migrations
                 column: "IdEspecialidades");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Medico_IdTipoEspecialidade",
+                name: "IX_Medico_IdTiposUsuario",
                 table: "Medico",
-                column: "IdTipoEspecialidade");
+                column: "IdTiposUsuario");
 
             migrationBuilder.CreateIndex(
                 name: "IX_Medico_IdUsuario",

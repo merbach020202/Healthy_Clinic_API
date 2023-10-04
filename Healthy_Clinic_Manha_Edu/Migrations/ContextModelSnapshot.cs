@@ -284,9 +284,13 @@ namespace Healthy_Clinic_Manha_Edu.Migrations
                     b.Property<Guid>("IdTiposUsuario")
                         .HasColumnType("uniqueidentifier");
 
-                    b.Property<string>("Senha")
+                    b.Property<string>("Nome")
                         .IsRequired()
                         .HasColumnType("VARCHAR(50)");
+
+                    b.Property<string>("Senha")
+                        .IsRequired()
+                        .HasColumnType("VARCHAR(60)");
 
                     b.HasKey("IdUsuario");
 

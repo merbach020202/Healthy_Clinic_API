@@ -2,6 +2,7 @@
 using Healthy_Clinic_Manha_Edu.Domains;
 using Healthy_Clinic_Manha_Edu.Interfaces;
 using Healthy_Clinic_Manha_Edu.Utils;
+using Microsoft.Data.SqlClient;
 
 namespace Healthy_Clinic_Manha_Edu.Repositores
 {
@@ -13,6 +14,41 @@ namespace Healthy_Clinic_Manha_Edu.Repositores
             _evento = new Context();
         }
 
+        public Usuario BuscarPorEmailSenha(string email, string senha)
+        {
+            try
+            {
+                Usuario usuarioBuscado = _evento.Usuario
+                    .Select(u => new Usuario
+                    {
+                        IdUsuario = u.IdUsuario,
+                        Nome = u.Nome,
+                        Email = u.Email,
+                        Senha = u.Senha,
+                        TiposUsuario = new TiposUsuario
+                        {
+                            IdTiposUsuario = u.IdTiposUsuario,
+                            Nome = u.TiposUsuario.Nome
+                        }
+                    }).FirstOrDefault(u => u.Email == email)!;
+
+                //if (usuarioBuscado != null)
+                //{
+                //    bool confere = Criptografia.CompararHash(senha, usuarioBuscado.Senha);
+
+                //    if (confere)
+                //    {
+                //        return usuarioBuscado;
+                //    }
+                //}
+                return null;
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
+
         public Usuario BuscarPorId(Guid id)
         {
             return _evento.Usuario.FirstOrDefault(e => e.IdUsuario == id);
@@ -22,7 +58,9 @@ namespace Healthy_Clinic_Manha_Edu.Repositores
         {
             try
             {
-                //usuario.Senha = Criptografia.GerarHash(usuario.Senha);
+                usuario.Senha = Criptografia.GerarHash(usuario.Senha);
+
+                _evento.TiposUsuario.Find(usuario.IdTiposUsuario);
 
                 _evento.Usuario.Add(usuario);
 
@@ -30,7 +68,6 @@ namespace Healthy_Clinic_Manha_Edu.Repositores
             }
             catch (Exception)
             {
-
                 throw;
             }
 

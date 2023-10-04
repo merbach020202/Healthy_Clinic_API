@@ -2,7 +2,7 @@
 
 namespace Healthy_Clinic_Manha_Edu.Login
 {
-    public class Login
+    public class LoginClass
     {
         [Required(ErrorMessage = "O Email é obrigatório!")]
         public string? Email { get; set; }

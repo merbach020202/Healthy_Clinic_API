@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Healthy_Clinic_Manha_Edu.Migrations
 {
     [DbContext(typeof(Context))]
-    [Migration("20231003115043_Healthy_Clinic_Manha_Edu_v2")]
-    partial class Healthy_Clinic_Manha_Edu_v2
+    [Migration("20231004133216_Healthy_Clinic_Manha_Edu")]
+    partial class Healthy_Clinic_Manha_Edu
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -287,9 +287,13 @@ namespace Healthy_Clinic_Manha_Edu.Migrations
                     b.Property<Guid>("IdTiposUsuario")
                         .HasColumnType("uniqueidentifier");
 
-                    b.Property<string>("Senha")
+                    b.Property<string>("Nome")
                         .IsRequired()
                         .HasColumnType("VARCHAR(50)");
+
+                    b.Property<string>("Senha")
+                        .IsRequired()
+                        .HasColumnType("VARCHAR(60)");
 
                     b.HasKey("IdUsuario");
 

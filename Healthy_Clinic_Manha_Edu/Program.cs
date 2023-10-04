@@ -23,7 +23,7 @@ builder.Services.AddAuthentication(options =>
 
         ValidateLifetime = true,
 
-        IssuerSigningKey = new SymmetricSecurityKey(System.Text.Encoding.UTF8.GetBytes("Clinic-chave-autenticacao-webapi-dev")),
+        IssuerSigningKey = new SymmetricSecurityKey(System.Text.Encoding.UTF8.GetBytes("HealthyManha-chave-autenticacao-event-plus-manha")),
 
         ClockSkew = TimeSpan.FromMinutes(5),
 

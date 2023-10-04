@@ -1,6 +1,7 @@
 ﻿using Healthy_Clinic_Manha_Edu.Domains;
 using Healthy_Clinic_Manha_Edu.Interfaces;
 using Healthy_Clinic_Manha_Edu.Repositores;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
@@ -32,6 +33,8 @@ namespace Healthy_Clinic_Manha_Edu.Controllers
             }
         }
 
+        
+        //[Authorize(Roles ="Administrador")]
         [HttpPost]
 
         public IActionResult Post(Medico medico)
@@ -48,6 +51,7 @@ namespace Healthy_Clinic_Manha_Edu.Controllers
             }
         }
 
+        //[Authorize(Roles = "Administrador")]
         [HttpDelete("{id}")]
         public IActionResult Delete(Guid id)
         {

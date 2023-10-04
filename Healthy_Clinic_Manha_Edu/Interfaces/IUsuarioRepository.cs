@@ -8,6 +8,8 @@ namespace Healthy_Clinic_Manha_Edu.Interfaces
 
         void Deletar(Guid id);
 
+        Usuario BuscarPorEmailSenha(string email, string senha);
+
         Usuario BuscarPorId(Guid id);
 
         List<Usuario> Listar();

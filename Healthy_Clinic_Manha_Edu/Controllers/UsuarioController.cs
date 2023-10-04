@@ -1,8 +1,10 @@
 ﻿using Healthy_Clinic_Manha_Edu.Domains;
 using Healthy_Clinic_Manha_Edu.Interfaces;
 using Healthy_Clinic_Manha_Edu.Repositores;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using System.Data;
 
 namespace Healthy_Clinic_Manha_Edu.Controllers
 {
@@ -18,7 +20,7 @@ namespace Healthy_Clinic_Manha_Edu.Controllers
             _usuario = new UsuarioRepository();
         }
 
-
+        [Authorize(Roles = "Administrador")]
         [HttpGet]
         public IActionResult Get()
         {
@@ -33,7 +35,6 @@ namespace Healthy_Clinic_Manha_Edu.Controllers
         }
 
         [HttpPost]
-
         public IActionResult Post(Usuario usuario)
         {
             try
@@ -48,6 +49,7 @@ namespace Healthy_Clinic_Manha_Edu.Controllers
             }
         }
 
+        //[Authorize(Roles = "Administrador")]
         [HttpDelete("{id}")]
         public IActionResult Delete(Guid id)
         {
@@ -64,6 +66,7 @@ namespace Healthy_Clinic_Manha_Edu.Controllers
 
         }
 
+        //[Authorize(Roles = "Administrador")]
         [HttpGet("{id}")]
         public IActionResult BuscarPorId(Guid id)
         {
