@@ -34,7 +34,7 @@ namespace Healthy_Clinic_Manha_Edu.Controllers
             }
         }
 
-        //[Authorize(Roles = "Administrador")]
+        [Authorize(Roles = "Administrador")]
         [HttpPost]
         public IActionResult Post(Prontuario prontuario)
         {
@@ -50,7 +50,7 @@ namespace Healthy_Clinic_Manha_Edu.Controllers
             }
         }
 
-        //[Authorize(Roles = "Administrador")]
+        [Authorize(Roles = "Administrador")]
         [HttpDelete("{id}")]
         public IActionResult Delete(Guid id)
         {

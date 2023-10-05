@@ -11,7 +11,7 @@ namespace Healthy_Clinic_Manha_Edu.Controllers
     [Route("api/[controller]")]
     [ApiController]
     [Produces("application/json")]
-    //[Authorize(Roles ="Administrador")]
+    [Authorize(Roles ="Administrador")]
     public class TiposUsuarioController : ControllerBase
     {
         private ITiposUsuario _tiposUsuario;

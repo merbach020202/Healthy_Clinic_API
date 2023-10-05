@@ -49,7 +49,7 @@ namespace Healthy_Clinic_Manha_Edu.Controllers
             }
         }
 
-        //[Authorize(Roles = "Administrador")]
+        [Authorize(Roles = "Administrador")]
         [HttpDelete("{id}")]
         public IActionResult Delete(Guid id)
         {
@@ -66,7 +66,7 @@ namespace Healthy_Clinic_Manha_Edu.Controllers
 
         }
 
-        //[Authorize(Roles = "Administrador")]
+        [Authorize(Roles = "Administrador")]
         [HttpGet("{id}")]
         public IActionResult BuscarPorId(Guid id)
         {

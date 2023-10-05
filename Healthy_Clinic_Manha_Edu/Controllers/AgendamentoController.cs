@@ -13,7 +13,7 @@ namespace Healthy_Clinic_Manha_Edu.Controllers
 
     [Produces("application/json")]
 
-    //[Authorize(Roles ="Administrador")]
+    [Authorize(Roles ="Administrador")]
     public class AgendamentoController : ControllerBase
     {
         private IAgendamentoRepository _agendamento;
